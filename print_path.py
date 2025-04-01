@@ -1,4 +1,3 @@
-import glob
 import os
 import sys
 
@@ -14,7 +13,7 @@ def list_path_exec():
 
     for directory in path_dirs:
         if os.path.isdir(directory):
-            exec = [f for f in glob.glob(os.path.join(directory, "*.exe"))]
+            exec = [f for f in os.listdir(directory) if f.lower().endswith(".exe")]
             print(f"{directory}")
 
             for exe in exec:
