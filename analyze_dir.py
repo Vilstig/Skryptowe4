@@ -14,7 +14,7 @@ def analyze_dir(directory_path):
     for root, _, files in os.walk(directory_path):
         for file in files:
             file_path = os.path.join(root, file)
-            process = subprocess.run([sys.executable, "analyze_file.py", file_path], capture_output=True, text=True) #sys.executable ensures we use the same python interpreter, it returns the path to it
+            process = subprocess.run([sys.executable, "analyze_file.py", file_path], capture_output=True, text=True) #sys.executable returns path to the python interpreter being used
             try:
                 file_result = json.loads(process.stdout)
                 results.append(file_result)
