@@ -15,7 +15,7 @@ def convert_file(input_path, output_format):
     output_path = os.path.join(output_dir, f'{timestamp}-{orig_name}.{output_format}')
 
     try:
-        subprocess.run(['ffmpeg', '-i', input_path, output_path, '-y'], check=True, capture_output=False)
+        subprocess.run(['ffmpeg', '-i', input_path, output_path, '-y'], check=True, capture_output=True)
         conversion_log(timestamp, input_path, output_format, output_path)
         print(f'Conversion ended successfully')
     except subprocess.CalledProcessError:
