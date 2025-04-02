@@ -2,7 +2,7 @@ import os
 import json
 import datetime
 
-extensions = ('.mp4', '.avi', '.mov', '.mkv', '.mp3', '.wav', '.flac')
+extensions = ('mp4', 'avi', 'mov', 'mkv', 'mp3', 'wav', 'flac')
 
 def find_media_files(dir_path):
     file_list = []

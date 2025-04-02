@@ -12,10 +12,10 @@ def convert_file(input_path, output_format):
     timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
     orig_name = os.path.splitext(os.path.basename(input_path))[0] #getting the files original name
     output_dir = get_output_dir()
-    output_path = os.path.join(output_dir, f'{datetime}-{orig_name}.{output_format}')
+    output_path = os.path.join(output_dir, f'{timestamp}-{orig_name}.{output_format}')
 
     try:
-        subprocess.run(['ffmpeg', '-i', input_path, output_path, '-y'], check=True)
+        subprocess.run(['ffmpeg', '-i', input_path, output_path, '-y'], check=True, capture_output=False)
         conversion_log(timestamp, input_path, output_format, output_path)
         print(f'Conversion ended successfully')
     except subprocess.CalledProcessError:
@@ -23,7 +23,7 @@ def convert_file(input_path, output_format):
 
 def main():
     if len(sys.argv) < 3:
-        print('Usage: python media_convert.py <directory_path> <output_format>')
+        print('Usage: python media_convert.py <input_directory_path> <output_format>')
         sys.exit(1)
 
     input_dir = sys.argv[1]
