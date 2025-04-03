@@ -1,7 +1,7 @@
 import json
 import os
 
-MEDIA_EXTENSIONS = ('.mp4', '.avi', '.mov', '.mkv', '.mp3', '.wav', '.flac')
+#MEDIA_EXTENSIONS = ('.mp4', '.avi', '.mov', '.mkv', '.mp3', '.wav', '.flac')
 IMAGE_EXTENSIONS = ('jpg', 'jpeg', 'png', 'gif', 'bmp', 'tiff', 'tif', 'webp', 'ico', 'svg', 'heic')
 
 def find_media_files(dir_path):
@@ -9,8 +9,8 @@ def find_media_files(dir_path):
 
     for root, _, files in os.walk(dir_path):
         for file in files:
-            if file.lower().endswith(MEDIA_EXTENSIONS + IMAGE_EXTENSIONS):
-                file_list.append(os.path.join(root, file))
+            #if file.lower().endswith(MEDIA_EXTENSIONS + IMAGE_EXTENSIONS):
+            file_list.append(os.path.join(root, file))
 
     return file_list
 

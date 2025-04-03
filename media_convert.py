@@ -3,13 +3,13 @@ import sys
 import subprocess
 import datetime
 import json
-from utils import find_media_files, get_output_dir, conversion_log, MEDIA_EXTENSIONS, IMAGE_EXTENSIONS, is_image
+from utils import find_media_files, get_output_dir, conversion_log, IMAGE_EXTENSIONS, is_image#, MEDIA_EXTENSIONS
 
 
 def convert_file(input_path, output_format):
-    if output_format not in MEDIA_EXTENSIONS + IMAGE_EXTENSIONS:
+    '''if output_format not in MEDIA_EXTENSIONS + IMAGE_EXTENSIONS:
         print(f'Error: {output_format} is not a supported extension')
-        sys.exit(1)
+        sys.exit(1)'''
     timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
     orig_name = os.path.splitext(os.path.basename(input_path))[0] #getting the files original name
     output_dir = get_output_dir()
