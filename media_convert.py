@@ -3,7 +3,7 @@ import sys
 import subprocess
 import datetime
 import json
-from utils import find_media_files, get_output_dir, conversion_log, IMAGE_EXTENSIONS, is_image#, MEDIA_EXTENSIONS
+from utils import find_media_files, get_output_dir, conversion_log, is_image#, MEDIA_EXTENSIONS, IMAGE_EXTENSIONS
 
 
 def convert_file(input_path, output_format):
